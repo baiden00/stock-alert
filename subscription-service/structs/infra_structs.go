@@ -14,12 +14,22 @@ type Datastore struct{
 	ClusterAddress string
 }
 
+func NewDatastore(name string, address string)*Datastore{
+	return &Datastore{Name: name, ClusterAddress: address}
+}
+
 type Cache struct{
 	Name string
 	Redis redis.Client
+}
+
+func NewCache(name string, redisClient redis.Client)*Cache{
+	return &Cache{Name: name, Redis: redisClient}
 }
 
 type Server struct{
 	Name string
 	Address string
 }
+
+
